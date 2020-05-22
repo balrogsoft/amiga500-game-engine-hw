@@ -1,0 +1,14 @@
+CC=sc
+CFLAGS=parameters=registers opt nooptpeep optsched opttime optinl optinlocal
+
+OBJS= ptplayer.o Engine.o 
+
+all: Engine
+
+clean:
+   delete \#?.o \#?.lnk \#?.map \#?.gst Engine
+
+Engine: $(OBJS)
+	slink lib:c.o $(OBJS) lib lib:sc.lib lib:amiga.lib to $@
+
+Engine.o: Engine.c
