@@ -643,7 +643,6 @@ void sp_restoreSpriteBack(Sprite *spr, UBYTE *dest) {
 
 void sp_drawSprite(Sprite *spr, UBYTE *dest, WORD sx, WORD sy) 
 {
-
     ULONG scr_offset = ((spr->x[frame] >> 3) & 0xFFFE) + wbytes[spr->y[frame]];
     ULONG map_offset = ((sx >> 3) & 0xFFFE) + spr->wbytes[sy];
 
