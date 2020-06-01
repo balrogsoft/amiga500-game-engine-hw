@@ -44,7 +44,7 @@
 #define BITMAPLINEBYTESI 160
 #define BITMAPLINEBYTESB 38
 
-#define WIDTH 320		
+#define WIDTH 320
 #define HEIGHT 256
 
 #define UP     1 
@@ -89,7 +89,7 @@ UWORD GetVBR[] = {0x4e7a, 0x0801, 0x4e73}; // MOVEC.L VBR,D0 RTE
 UWORD wbytes[HEIGHT];
 
 typedef struct {
-	UBYTE *data;
+    UBYTE *data;
     WORD  width;
     WORD  height;
     WORD  wbytes;
@@ -97,8 +97,8 @@ typedef struct {
 } Bitmap;
 
 typedef struct {
-	UBYTE *rest_bm;
-		
+    UBYTE *rest_bm;
+
     UWORD wbytes[HEIGHT];
     UWORD bltsize;
     
@@ -108,8 +108,8 @@ typedef struct {
     WORD x;
     WORD y;
     
-	WORD fx[2];
-	WORD fy[2];
+    WORD fx[2];
+    WORD fy[2];
     WORD width;
     WORD height;
     
@@ -148,53 +148,53 @@ UWORD chip cop1[] =
 {
     FMODE, 0,
     
-	BPLCON0, 0x4200,
-	BPLCON1, 0,
+    BPLCON0, 0x4200,
+    BPLCON1, 0,
 
-	DIWSTRT, 0x2C81,
-	DIWSTOP, 0x2CC1,
+    DIWSTRT, 0x2C81,
+    DIWSTOP, 0x2CC1,
  
-	DDFSTRT, 0x0038, 
-	DDFSTOP, 0x00d0,
+    DDFSTRT, 0x0038, 
+    DDFSTOP, 0x00d0,
 
-	BPL1MOD, 0x78,
-	BPL2MOD, 0x78,
+    BPL1MOD, 0x78,
+    BPL2MOD, 0x78,
 
-	SPR0PTH, 0,
-	SPR0PTL, 0,
+    SPR0PTH, 0,
+    SPR0PTL, 0,
         
-	SPR1PTH, 0,
-	SPR1PTL, 0,
+    SPR1PTH, 0,
+    SPR1PTL, 0,
+    
+    SPR2PTH, 0,
+    SPR2PTL, 0,
         
-	SPR2PTH, 0,
-	SPR2PTL, 0,
+    SPR3PTH, 0,
+    SPR3PTL, 0,
         
-	SPR3PTH, 0,
-	SPR3PTL, 0,
+    SPR4PTH, 0,
+    SPR4PTL, 0,
         
-	SPR4PTH, 0,
-	SPR4PTL, 0,
+    SPR5PTH, 0,
+    SPR5PTL, 0,
         
-	SPR5PTH, 0,
-	SPR5PTL, 0,
+    SPR6PTH, 0,
+    SPR6PTL, 0,
         
-	SPR6PTH, 0,
-	SPR6PTL, 0,
-        
-	SPR7PTH, 0,
-	SPR7PTL, 0,
+    SPR7PTH, 0,
+    SPR7PTL, 0,
 
-	BPL1PTH, 0,
-	BPL1PTL, 0,
-	
-	BPL2PTH, 0,
-	BPL2PTL, 0,
+    BPL1PTH, 0,
+    BPL1PTL, 0,
 
-	BPL3PTH, 0,
-	BPL3PTL, 0,
+    BPL2PTH, 0,
+    BPL2PTL, 0,
 
-	BPL4PTH, 0,
-	BPL4PTL, 0,
+    BPL3PTH, 0,
+    BPL3PTL, 0,
+
+    BPL4PTH, 0,
+    BPL4PTL, 0,
 
     COLOR00, 0x0000,
     COLOR01, 0x0323,
@@ -213,61 +213,61 @@ UWORD chip cop1[] =
     COLOR14, 0x0efe,
     COLOR15, 0x0ed5,
 
-	0xffff, 0xfffe,
-	0xffff, 0xfffe
+    0xffff, 0xfffe,
+    0xffff, 0xfffe
 };
 
 UWORD chip cop2[] =
 {
     FMODE, 0,
     
-	BPLCON0, 0x4200,
-	BPLCON1, 0,
+    BPLCON0, 0x4200,
+    BPLCON1, 0,
 
-	DIWSTRT, 0x2C81,
-	DIWSTOP, 0x2CC1,
+    DIWSTRT, 0x2C81,
+    DIWSTOP, 0x2CC1,
  
-	DDFSTRT, 0x0038, 
-	DDFSTOP, 0x00d0,
+    DDFSTRT, 0x0038, 
+    DDFSTOP, 0x00d0,
 
-	BPL1MOD, 0x78,
-	BPL2MOD, 0x78,
+    BPL1MOD, 0x78,
+    BPL2MOD, 0x78,
 
-	SPR0PTH, 0,
-	SPR0PTL, 0,
+    SPR0PTH, 0,
+    SPR0PTL, 0,
         
-	SPR1PTH, 0,
-	SPR1PTL, 0,
+    SPR1PTH, 0,
+    SPR1PTL, 0,
         
-	SPR2PTH, 0,
-	SPR2PTL, 0,
+    SPR2PTH, 0,
+    SPR2PTL, 0,
         
-	SPR3PTH, 0,
-	SPR3PTL, 0,
+    SPR3PTH, 0,
+    SPR3PTL, 0,
         
-	SPR4PTH, 0,
-	SPR4PTL, 0,
+    SPR4PTH, 0,
+    SPR4PTL, 0,
         
-	SPR5PTH, 0,
-	SPR5PTL, 0,
+    SPR5PTH, 0,
+    SPR5PTL, 0,
         
-	SPR6PTH, 0,
-	SPR6PTL, 0,
+    SPR6PTH, 0,
+    SPR6PTL, 0,
         
-	SPR7PTH, 0,
-	SPR7PTL, 0,
+    SPR7PTH, 0,
+    SPR7PTL, 0,
 
-	BPL1PTH, 0,
-	BPL1PTL, 0,
-	
-	BPL2PTH, 0,
-	BPL2PTL, 0,
+    BPL1PTH, 0,
+    BPL1PTL, 0,
 
-	BPL3PTH, 0,
-	BPL3PTL, 0,
+    BPL2PTH, 0,
+    BPL2PTL, 0,
 
-	BPL4PTH, 0,
-	BPL4PTL, 0,
+    BPL3PTH, 0,
+    BPL3PTL, 0,
+
+    BPL4PTH, 0,
+    BPL4PTL, 0,
 
     COLOR00, 0x0000,
     COLOR01, 0x0323,
@@ -286,12 +286,11 @@ UWORD chip cop2[] =
     COLOR14, 0x0efe,
     COLOR15, 0x0ed5,
 
-	0xffff, 0xfffe,
-	0xffff, 0xfffe
+    0xffff, 0xfffe,
+    0xffff, 0xfffe
 };
     
 ULONG random_v = 0x9c33fe02;
-
 
 #define WaitBlitter() while (GETLONG(custom->dmaconr) & DMAF_BLTDONE){}
 
@@ -302,8 +301,8 @@ static LONG __interrupt __saveds NullInputHandler(void)
 
 ULONG random(void)
 {
-  random_v = (random_v * (ULONG)2654435761);
-  return random_v>>16;
+    random_v = (random_v * (ULONG)2654435761);
+    return random_v>>16;
 }
 
 #ifdef INLINE_FUNCTIONS
@@ -328,8 +327,8 @@ ULONG random(void)
     custom->bltdmod = BITMAPLINEBYTESB; \
     custom->bltapt  = tm->offset[tl] + 32; \
     custom->bltbpt  = tm->offset[tl]; \
-    custom->bltcpt	= dst + ((tx >> 3) & 0xFFFE) + wbytes[ty]; \
-    custom->bltdpt	= custom->bltcpt; \
+    custom->bltcpt  = dst + ((tx >> 3) & 0xFFFE) + wbytes[ty]; \
+    custom->bltdpt  = custom->bltcpt; \
     custom->bltsize = 4097; 
 
 #define sp_initSpritePos(spr, sx, sy) \
@@ -359,7 +358,7 @@ ULONG random(void)
                 if (spr_chk->origTile == spr->origTile || \
                     spr_chk->destTile == spr->origTile) { \
                     spr->dirty = 2; \
-					spr_chk->dirty = 2; \
+                    spr_chk->dirty = 2; \
                     for (j = 0; j < OVER_TILES; j++) {  \
                         if (tileMap->tilemap[spr->origTile] == overlay_tiles[j]) {  \
                             tileMap->dirty[spr->origTile] = 2;  \
@@ -409,7 +408,7 @@ ULONG random(void)
                     spr_chk->origTile+1 == tile1 || \
                     spr_chk->destTile+1 == tile1) { \
                     spr->dirty = 2; \
-					spr_chk->dirty = 2; \
+                    spr_chk->dirty = 2; \
                     for (j = 0; j < OVER_TILES; j++) {  \
                         if (tileMap->tilemap[tile1] == overlay_tiles[j]) {  \
                             tileMap->dirty[tile1] = 2;  \
@@ -433,7 +432,7 @@ ULONG random(void)
     custom->bltamod = BITMAPLINEBYTES - 4; \
     custom->bltdmod = 0; \
     custom->bltapt  = dst + scr_offset; \
-    custom->bltdpt	= spr->rest_bm + spr->rest_bpl[frame]; \
+    custom->bltdpt  = spr->rest_bm + spr->rest_bpl[frame]; \
     custom->bltsize = spr->bltsize;
 
 #define sp_restoreSpriteBack(spr, dst) \
@@ -445,8 +444,8 @@ ULONG random(void)
     custom->bltalwm = 0xFFFF; \
     custom->bltamod = 0; \
     custom->bltdmod = BITMAPLINEBYTES - 4; \
-    custom->bltapt	= spr->rest_bm + spr->rest_bpl[frame]; \
-    custom->bltdpt	= dst + scr_offset; \
+    custom->bltapt  = spr->rest_bm + spr->rest_bpl[frame]; \
+    custom->bltdpt  = dst + scr_offset; \
     custom->bltsize = spr->bltsize; 
    
 #define sp_drawSprite(spr, dst) \
@@ -464,8 +463,8 @@ ULONG random(void)
     custom->bltdmod   = custom->bltcmod; \
     custom->bltapt    = spr->bm->data + bpl_offset + spr->bm->wbytes; \
     custom->bltbpt    = spr->bm->data + bpl_offset; \
-    custom->bltcpt	  = dst + scr_offset; \
-    custom->bltdpt	  = dst + scr_offset; \
+    custom->bltcpt    = dst + scr_offset; \
+    custom->bltdpt    = dst + scr_offset; \
     custom->bltsize   = spr->bltsize; \
     if (spr->dirty > 0) \
         spr->dirty--;
@@ -499,8 +498,8 @@ void tm_drawTile(TileMap *tm, UBYTE *dst, WORD x, WORD y, WORD tile)
 
     custom->bltapt  =  tm->offset[tile] + 32;
     custom->bltbpt  =  tm->offset[tile];
-    custom->bltcpt	=  dst + ((x >> 3) & 0xFFFE) + wbytes[y];
-    custom->bltdpt	=  custom->bltcpt;
+    custom->bltcpt  =  dst + ((x >> 3) & 0xFFFE) + wbytes[y];
+    custom->bltdpt  =  custom->bltcpt;
 
     custom->bltsize = 4097;
 }
@@ -575,7 +574,7 @@ void sp_updateSpritePos(Sprite *sprListHead, Sprite *spr, TileMap *tm, UBYTE anm
 }
 
 void sp_updateSpriteDirty(Sprite *sprListHead, Sprite *spr, TileMap *tm, UBYTE *over_tiles, UWORD *mapy, UWORD *modu) {
-	if (spr->move == FALSE) {
+    if (spr->move == FALSE) {
         UWORD tx1, ty1, tile1, j;
         Sprite *spr_chk;
         tx1 = spr->x >> 4;
@@ -589,7 +588,7 @@ void sp_updateSpriteDirty(Sprite *sprListHead, Sprite *spr, TileMap *tm, UBYTE *
                     spr_chk->origTile+1 == tile1 ||
                     spr_chk->destTile+1 == tile1) {
                     spr->dirty = 2;
-					spr_chk->dirty = 2;
+                    spr_chk->dirty = 2;
                     for (j = 0; j < OVER_TILES; j++) {
                         if (tm->tilemap[tile1] == over_tiles[j]) {
                             tm->dirty[tile1] = 2;
@@ -605,7 +604,6 @@ void sp_updateSpriteDirty(Sprite *sprListHead, Sprite *spr, TileMap *tm, UBYTE *
 void sp_saveSpriteBack(Sprite* spr, UBYTE *dest) {
     ULONG scr_offset, map_offset;
     
-     
     scr_offset = ((spr->x[frame] >> 3) & 0xFFFE) + wbytes[spr->y[frame]];
     map_offset = frame * ((spr->bm_wbytes * spr->height) << 2);
     
@@ -619,12 +617,11 @@ void sp_saveSpriteBack(Sprite* spr, UBYTE *dest) {
     custom->bltdmod = 0;
     
     custom->bltapt  = dest + scr_offset;
-    custom->bltdpt	= spr->rest_bm + map_offset;
+    custom->bltdpt  = spr->rest_bm + map_offset;
     custom->bltsize = spr->bltsize;
 }
 
 void sp_restoreSpriteBack(Sprite *spr, UBYTE *dest) {
-
     ULONG scr_offset, map_offset;
     
     scr_offset = ((spr->x[frame] >> 3) & 0xFFFE) + wbytes[spr->y[frame]];
@@ -639,8 +636,8 @@ void sp_restoreSpriteBack(Sprite *spr, UBYTE *dest) {
     custom->bltamod = 0;
     custom->bltdmod = BITMAPLINEBYTES - 4;
     
-    custom->bltapt	= spr->rest_bm + map_offset;
-    custom->bltdpt	= dest + scr_offset;
+    custom->bltapt  = spr->rest_bm + map_offset;
+    custom->bltdpt  = dest + scr_offset;
     custom->bltsize = spr->bltsize;
 }
 
@@ -663,8 +660,8 @@ void sp_drawSprite(Sprite *spr, UBYTE *dest, WORD sx, WORD sy)
     
     custom->bltapt  = spr->bm + map_offset + spr->bm_wbytes;
     custom->bltbpt  = spr->bm + map_offset;
-    custom->bltcpt	= dest + scr_offset;
-    custom->bltdpt	= dest + scr_offset;
+    custom->bltcpt  = dest + scr_offset;
+    custom->bltdpt  = dest + scr_offset;
 
     custom->bltsize = spr->bltsize;
 }
@@ -788,39 +785,39 @@ UBYTE joy_read(UWORD joynum)
 
 void installInputHandler(void) {
     if ((inputMP = CreateMsgPort()))
-	{
-		if ((inputReq = CreateIORequest(inputMP, sizeof(*inputReq))))
-		{
+    {
+        if ((inputReq = CreateIORequest(inputMP, sizeof(*inputReq))))
+        {
             inputDevice = OpenDevice("input.device", 0, (struct IORequest *)inputReq, 0);
-			if (inputDevice == 0)
-			{
-				inputHandler.is_Node.ln_Type = NT_INTERRUPT;
-				inputHandler.is_Node.ln_Pri = 127;
-				inputHandler.is_Data = 0;
-				inputHandler.is_Code = (APTR)NullInputHandler;
+            if (inputDevice == 0)
+            {
+                inputHandler.is_Node.ln_Type = NT_INTERRUPT;
+                inputHandler.is_Node.ln_Pri = 127;
+                inputHandler.is_Data = 0;
+                inputHandler.is_Code = (APTR)NullInputHandler;
                 inputHandler.is_Node.ln_Name=NameString;
-			
-				inputReq->io_Command = IND_ADDHANDLER;
-				inputReq->io_Data = &inputHandler;
-				
-				DoIO((struct IORequest *)inputReq);
-			}
-		}
-	}
+
+                inputReq->io_Command = IND_ADDHANDLER;
+                inputReq->io_Data = &inputHandler;
+
+                DoIO((struct IORequest *)inputReq);
+            }
+        }
+    }
 }
 
 void removeInputHandler(void) {
-	if (inputDevice == 0)
-	{
-		inputReq->io_Data = &inputHandler;
-		inputReq->io_Command = IND_REMHANDLER;
-		DoIO((struct IORequest *)inputReq);
-		CloseDevice((struct IORequest *)inputReq);
-	}
+    if (inputDevice == 0)
+    {
+        inputReq->io_Data = &inputHandler;
+        inputReq->io_Command = IND_REMHANDLER;
+        DoIO((struct IORequest *)inputReq);
+        CloseDevice((struct IORequest *)inputReq);
+    }
 
-	if (inputReq) 
+    if (inputReq) 
         DeleteIORequest(inputReq);
-	if (inputMP) 
+    if (inputMP) 
         DeleteMsgPort(inputMP);
 }
 
@@ -831,30 +828,30 @@ static LONG __interrupt __saveds VertBServer(void) {
 
 int installVBlankInt(void)
 {
-	if(vbInt = AllocMem(sizeof(struct Interrupt), MEMF_ANY|MEMF_CLEAR)) {
-		vbInt->is_Node.ln_Type = NT_INTERRUPT;
-		vbInt->is_Node.ln_Pri = -60;
-		vbInt->is_Node.ln_Name = "VB_Engine";
-		vbInt->is_Data = (APTR)&vbCounter;
-		vbInt->is_Code = VertBServer;
-		AddIntServer(INTB_VERTB, vbInt);
-	}
-	else {
-		printf("Can't allocate memory for vblank interrupt\n");
-		return 0;
-	}
-	return 1;
+    if(vbInt = AllocMem(sizeof(struct Interrupt), MEMF_ANY|MEMF_CLEAR)) {
+        vbInt->is_Node.ln_Type = NT_INTERRUPT;
+        vbInt->is_Node.ln_Pri = -60;
+        vbInt->is_Node.ln_Name = "VB_Engine";
+        vbInt->is_Data = (APTR)&vbCounter;
+        vbInt->is_Code = VertBServer;
+        AddIntServer(INTB_VERTB, vbInt);
+    }
+    else {
+        printf("Can't allocate memory for vblank interrupt\n");
+        return 0;
+    }
+    return 1;
 }
 
 void removeVBlankInt(void)
 {
-	RemIntServer(INTB_VERTB, vbInt);
-	FreeMem(vbInt, sizeof(struct Interrupt));
+    RemIntServer(INTB_VERTB, vbInt);
+    FreeMem(vbInt, sizeof(struct Interrupt));
 }
 
 int main()
 {
-	UWORD oldInt, oldDMA;
+    UWORD oldInt, oldDMA;
     struct View *oldView;
     struct copinit *oldCopInit;
     BPTR file_ptr;
@@ -900,12 +897,12 @@ int main()
     
     ULONG scr_offset, bpl_offset;
     UWORD wrd_offset;
-	
+
     UBYTE frame = 0; 
     
     void *vbr;
     UBYTE isPal;
-	
+
     // Do some precalcs
     
     for (i = 0; i < MAP_SIZE; i++) {
@@ -947,9 +944,9 @@ int main()
             Close(file_ptr);
     }
 
-	// open gfx lib and save original copperlist
-	GfxBase = (struct GfxBase*)OldOpenLibrary("graphics.library");
-	oldCopInit = GfxBase->copinit;
+    // open gfx lib and save original copperlist
+    GfxBase = (struct GfxBase*)OldOpenLibrary("graphics.library");
+    oldCopInit = GfxBase->copinit;
     oldView = GfxBase->ActiView;
     
     // Install input handler
@@ -957,21 +954,21 @@ int main()
     
     task = FindTask(NULL);
     process = (struct Process *) task;
-	winPtr = process->pr_WindowPtr;
-	process->pr_WindowPtr = (APTR)-1;
+    winPtr = process->pr_WindowPtr;
+    process->pr_WindowPtr = (APTR)-1;
     
     Forbid();
     
-	// Save interrupts and DMA
+    // Save interrupts and DMA
     oldInt = custom->intenar;
     oldDMA = custom->dmaconr;
 
-	// disable all interrupts and DMA
-	custom->intena = 0x7fff;
-	custom->intreq = 0x7fff; 
+    // disable all interrupts and DMA
+    custom->intena = 0x7fff;
+    custom->intreq = 0x7fff; 
 
-	// set required bits of DMA
-	custom->dmacon = DMAF_SETCLR | DMAF_RASTER | DMAF_BLITTER | DMAF_BLITHOG | DMAF_COPPER;
+    // set required bits of DMA
+    custom->dmacon = DMAF_SETCLR | DMAF_RASTER | DMAF_BLITTER | DMAF_BLITHOG | DMAF_COPPER;
 
     // Allocate memory for bitplanes, interleaved format
     ptr10 = AllocMem(((WIDTH * HEIGHT) >> 3) << 2, MEMF_CHIP | MEMF_CLEAR);
@@ -1025,7 +1022,7 @@ int main()
     
     for (i = 0; i < SPRITES_NB; i ++) {
         player_spr[i] = sp_create(sprite_bm, 16, 16, 48, 64, 4);
-		player_spr_srt[i] = player_spr[i];
+        player_spr_srt[i] = player_spr[i];
     }
 
     for (i = 0; i < SPRITES_NB; i ++) {
@@ -1076,7 +1073,7 @@ int main()
     WaitTOF();
     WaitTOF();
     
-	custom->cop1lc = clist[frame];
+    custom->cop1lc = clist[frame];
     
     isPal = SysBase->PowerSupplyFrequency < 59;
   
@@ -1096,8 +1093,8 @@ int main()
     
     installVBlankInt();
     
-	// loop until mouse clicked;
-	while(cia->ciapra & CIAF_GAMEPORT0) {
+    // loop until mouse clicked;
+    while(cia->ciapra & CIAF_GAMEPORT0) {
         
         // Read joystick
         joyData = joy_read(1);
@@ -1157,12 +1154,12 @@ int main()
         }
         
         // Update sprites position
-		sprite = spriteListHead;
+        sprite = spriteListHead;
         while (sprite != NULL) {
             UBYTE spr_frame = sprite->move==TRUE ? spr_frames[(fps >> 2) & 3] : 0;
             UBYTE spr_anim = sprite->dir;
 #ifdef INLINE_FUNCTIONS
-			sp_updateSpritePos(sprite, tileMap, spr_anim, spr_frame);
+            sp_updateSpritePos(sprite, tileMap, spr_anim, spr_frame);
 #else
             sp_updateSpritePos(spriteListHead, sprite, tileMap, spr_anim, spr_frame, walk_tiles, overlay_tiles, mapy, modu);
 #endif
@@ -1255,19 +1252,19 @@ int main()
     mt_end(custom);
     mt_remove_cia(custom);
     
-	// restore DMA
-	custom->dmacon = 0x7fff;
-	custom->dmacon = oldDMA | DMAF_SETCLR | DMAF_MASTER;
+    // restore DMA
+    custom->dmacon = 0x7fff;
+    custom->dmacon = oldDMA | DMAF_SETCLR | DMAF_MASTER;
 
-	// restore original copper
-	custom->cop1lc = (ULONG) oldCopInit;
+    // restore original copper
+    custom->cop1lc = (ULONG) oldCopInit;
 
-	// restore interrupts
-	custom->intena = oldInt | 0xc000;
+    // restore interrupts
+    custom->intena = oldInt | 0xc000;
 
     Permit();
     
-	process->pr_WindowPtr = winPtr;
+    process->pr_WindowPtr = winPtr;
     
     LoadView(oldView);
     WaitTOF();
@@ -1293,7 +1290,7 @@ int main()
     removeInputHandler();
     
     printf("vblank: %i - frames: %i\n", vbCounter, fps);
-	CloseLibrary((struct Library *)GfxBase);
+    CloseLibrary((struct Library *)GfxBase);
     
-	return 0;
+    return 0;
 }
